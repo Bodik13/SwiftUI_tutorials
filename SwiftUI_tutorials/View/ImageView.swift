@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct ImageView: View {
+    var image: Image
     var body: some View {
-        Image("moto")
+        image
             .frame(width: 150, height: 150)
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 4))
@@ -22,6 +23,7 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView()
+        ImageView(image: Image("moto"))
+            .previewDevice("iPhone 11")
     }
 }
